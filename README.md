@@ -1,5 +1,5 @@
 # Installing Emacs
-I use emacs with the native-comp feature. To get that you can either download the tarballs from [here](https://github.com/jimeh/build-emacs-for-macos) or build it [by following the instructions over here](https://github.com/jimeh/emacs-builds).
+I use emacs with the native-comp feature. To get that you can either download the tarballs from [here](https://github.com/jimeh/emacs-builds) or build it [by following the instructions over here](https://github.com/jimeh/build-emacs-for-macos).
 
 # JetBrains mono font
 The JetBrains Mono font can be [downloaded from here](https://www.jetbrains.com/lp/mono/).
