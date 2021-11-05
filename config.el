@@ -19,13 +19,13 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "JetBrains Mono" :size 13 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Monaco" :size 13))
+(setq doom-font (font-spec :family "Ayuthaya" :size 10 :weight 'bold)
+      doom-variable-pitch-font (font-spec :family "Monaco" :size 10))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-material)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -33,7 +33,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type 'relative)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -54,17 +54,22 @@
 ;; they are implemented.
 (use-package! cider
   :after clojure-mode
-  :init
-  (progn
-    (setq lsp-completion-enable nil) ; use cider completion
-    (setq lsp-lens-enable t))
   :config
   (progn
+    (setq cider-eldoc-display-for-symbol-at-point nil)
     (set-lookup-handlers! 'cider-mode nil)))
 
 (use-package! clj-refactor
   :after clojure-mode
-  :init (setq cljr-add-ns-to-blank-clj-files nil)
   :config
   (progn
+    (setq cljr-add-ns-to-blank-clj-files nil)
     (set-lookup-handlers! 'clj-refactor-mode nil)))
+
+
+(use-package! magit
+  :config
+  (progn
+    (setq magit-save-repository-buffers t)))
+
+(setq lsp-lens-enable t)
